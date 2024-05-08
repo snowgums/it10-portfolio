@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quote Generator</title>
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #quote {
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 80%;
+      max-width: 600px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+</style>
+</head>
+
+<body>
+  <div id="quote">
+    <p id="quoteText">Click the button to generate a quote!</p>
+    <button onclick="generateQuote()">Generate Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+        {
+           quote: "Be the love you never received.",
+           author: "Rune Lazuli",
+        },
+        {
+            quote:"Never dull your shine for somebody else.",
+            author: "Tyra Banks",
+        },
+        {
+            quote: "Beauty begins the moment you decide to be yourself.",
+            author: "Coco Chanel",
+        },
+        {
+            quote:"Above all else, embrace your flaws.",
+            author:"JH Hard" ,
+        },
+        {
+            quote: "Go all in on yourself",
+            author: "Jack Butcher",
+        },
+        {
+            quote:"You are blessed and highly favored",
+            author:"Les Brown" ,
+        },
+        {
+            quote:"Your only job is to be your truest self.",
+            author:"Chelsie Diane" ,
+        }
+    ];
+
+    function generateQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const randomQuote = quotes[randomIndex];
+        const quoteText = randomQuote.quote;
+        const authorText = randomQuote.author;
+    document.getElementById('quoteText').innerHTML = `"${quoteText}"<br>- ${authorText}`;
+}
+</script>
+
+</body>
+</html>
